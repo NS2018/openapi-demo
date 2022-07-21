@@ -7,8 +7,6 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-        group: f28eb2f6-b6cb-4ea0-bd61-49966fa3a66c
-        namespace: dev
   servlet:
     multipart:
       max-file-size: 30MB
