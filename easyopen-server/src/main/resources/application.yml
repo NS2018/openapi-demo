@@ -1,0 +1,27 @@
+spring:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource                                #  配置当前要使用的数据源的操作类型
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/sop?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai #  数据库连接地址
+    username: root                                                              #  数据库用户名
+    password: 123456                                                        #  数据库密码
+    druid:
+    filters: stat
+    initialSize: 5
+    minIdle: 5
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000                                      # timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000                                        # 配置一个连接在池中最小生存的时间，单位是毫秒
+    validationQuery: SELECT 1 FROM DUAL
+    testWhileIdle: true
+    testOnBorrow:  false
+    testOnReturn:  false
+  thymeleaf:
+    cache: true
+logging:
+  level:
+    com:
+      gitee:  debug
+mybatis:
+  mapper-locations:  classpath*:mybatis/mapper/*/*.xml
